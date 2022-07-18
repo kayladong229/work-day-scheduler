@@ -10,9 +10,9 @@ function colorTimeBlock() {
 
     //Loop over time blocks
     $(".time-block").each(function() {
-        // Retrieve the time of the block based on the given ID
+        //Retrieve the time of the block based on the given ID
         var blockHour = parseInt($(this).attr("id"));
-        //Set classes depending on when the selected block hour is relative to the current time
+        //Set classes depending on when the selected block hour is relative to the time the website is visited
         if (currentHour > blockHour) {
             $(this).addClass("past");
             $(this).removeClass("present");
@@ -27,7 +27,7 @@ function colorTimeBlock() {
             $(this).addClass("future");
         }
     })
-    
+
 }
 
 colorTimeBlock();
@@ -42,7 +42,7 @@ saveBtn.on("click", function() {
     localStorage.setItem(time, event);
 })
 
-// Retrieve any saved events upon refreshing
+//Retrieve any saved events upon refreshing
 $("#8 .description").val(localStorage.getItem("8"));
 $("#9 .description").val(localStorage.getItem("9"));
 $("#10 .description").val(localStorage.getItem("10"));
